@@ -1,0 +1,41 @@
+.login-bg{
+	background-image: url(../images/login_02.gif);
+	background-repeat: repeat-x;
+	background: -webkit-linear-gradient(top,#02395f 0%,#02609c 100%);
+	background: -moz-linear-gradient(top,#02395f 0%,#02609c 100%);/*Mozilla*/
+	background:-o-linear-gradient(top,#02395f,#02609c); /*Opera11*/
+	background:-webkit-gradient(linear,0 0,0 100%,from(#02395f),to(#02609c));/*Old gradient for webkit*/
+	background: -ms-linear-gradient(top,#02395f,#02609c);/*IE10+*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#02395f', endColorstr='#02609c', GradientType='0');/*IE<10*/
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#02395f', endColorstr='#02609c', GradientType='0')";/*IE<10*/*/
+}
+
+.login-container {  
+  background: url(../images/login_1.png) no-repeat;
+  height: 369px; 
+  width: 977px;
+  margin: auto;  
+  position: absolute;  
+  top: 0; left: 0; bottom: 0; right: 0;  
+} 
+.login-center{
+	/*border: 1px solid #AAAAAA;*/
+	width: 210px;
+	height: 180px;
+	margin: auto;  
+    position: absolute;  
+    top: 0; left:-5%; bottom: 0; right: 0; 
+}
+.login-center>ul{margin-top:60px;color: #FFFFFF;}
+.login-input{ color: #FFFFFF;height: 25px; border: 1px solid #AAAAAA; border-radius:5px ; background-color:transparent;}
+.login-input-yz{width:50px;text-align: center;}
+.code{margin-left: 10px;}
+.login-icon{background: url(../images/刷新.png)no-repeat;background-size:80% ; width:30px;height:30px;display: block;float:right;}
+a{color: #FFFFFF;}
+.login-wid{width: 50px;}
+.log-but{margin-top: 30px;}
+.log-but >li{ float: left; /*border: 1px solid #CCCCCC;*/ width: 46px;text-align: center;}
+.log-but li.login-wid{width: 63px;text-align: left;}
+.clearfix:after{content:"\20";display:block;height:0;clear:both;}
+.te-C{text-align: right;}
+/*.bog-p{padding-left:18px;}*/

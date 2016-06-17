@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/format.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body onload="createCode()">
+		<div class="login-bg">
+			<div class="login-container">
+				<div class="login-center">
+					<ul>
+						<li><p>用&#12288;户:&#12288;<input id="loginName" type="text" class="login-input input"/></p></li>
+						<li><p>密&#12288;码:&#12288;<input id="loginPwd" type="text" class="login-input input"/></p></li>
+						<li><p>验证码:&#12288;<input type="text"  id="inputCode" class="login-input login-input-yz" input/> 
+							<input type="text"id="checkCode"  onClick="createCode()"readonly="readonly" class="login-input login-input-yz code"/>
+							<a onClick="createCode()" href="#" class="login-icon"></a>
+							</p>
+						</li>
+					</ul>
+					<ol class="log-but clearfix">
+						<li class="login-wid"><a href="#" id="forgetPwd">忘记密码</a></li>
+						<li class=""><a href="#"onClick="validate();"> 登录</a></li>
+						<li class=""><a href="" id="reset">重置</a></li>
+						<li class=""><a href="#" id="register">注册</a></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var code;
+		$(function(){
+			var hei = $(window).height();
+			$('.login-bg').height(hei);
+		})
+		function createCode(){ 
+			code = new Array();
+			var codeLength = 4;//验证码的长度
+			var checkCode = document.getElementById("checkCode");
+				checkCode.value = "";
+			var selectChar = new Array(1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z');
+				for(var i=0; i < codeLength; i++) {
+				   var charIndex = Math.floor(Math.random() * selectChar.length);
+				   code +=selectChar[charIndex];
+				}
+			checkCode.value = code;
+		}
+		/*登录*/
+		function validate () {
+			var loginName = document.getElementById('loginName').value;
+			var loginPwd = document.getElementById("loginPwd").value;
+			var inputCode = document.getElementById("inputCode").value.toUpperCase();
+				if(loginName.length <=0) {
+				   alert("请输入用户名！");
+				   return false;
+				}else if(loginPwd.length <=0) {
+				   alert("请输入密码！");
+				   return false;
+				}else if(inputCode.length <=0) {
+				   alert("请输入验证码！");
+				   return false;
+				}else if(inputCode != code ){
+				   alert("验证码输入错误！");
+				   createCode();
+				   return false;
+				}else{
+					alert('登录成功！');
+				}
+		}
+		/*重置*/
+		 $('#reset').click(function(){  
+		     $('.input').val("");  
+	     }); 
+	     $('#forgetPwd').click(function(){  
+		    alert('忘记密码');
+	     }); 
+	     $('#register').click(function(){  
+		    alert('注册');
+	     }); 
+	</script>
+</html>
